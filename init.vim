@@ -1,58 +1,60 @@
 " Auto-Install vim-plug
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  "autocmd VimEnter * PlugInstall
-  "autocmd VimEnter * PlugInstall | source $MYVIMRC
+	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	"autocmd VimEnter * PlugInstall
+	"autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 
 " Vim-Editor Plugins
 call plug#begin('~/.config/nvim/autoload/plugged')
-	" Dracula color scheme
-	Plug 'dracula/vim', { 'as': 'dracula' }
 
-	" Git plugin
-	Plug 'tpope/vim-fugitive'
+" Dracula color scheme
+Plug 'dracula/vim', { 'as': 'dracula' }
 
-	" NerdTree
-	Plug 'preservim/nerdtree'
+" Git plugin
+Plug 'tpope/vim-fugitive'
 
-	" Autocomplete
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" NerdTree
+Plug 'preservim/nerdtree'
 
-	" Markdown preview
-	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+" Autocomplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-	" Use <TAB> for autocomplete
-	Plug 'ervandew/supertab'
+" Markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
-	" Autocomplete Brackets and Qoutes
-	Plug 'jiangmiao/auto-pairs'
+" Use <TAB> for autocomplete
+Plug 'ervandew/supertab'
 
-	" Auto close HTML Tags
-	Plug 'alvan/vim-closetag'
+" Autocomplete Brackets and Qoutes
+Plug 'jiangmiao/auto-pairs'
 
-	" Language Pack
-	Plug 'sheerun/vim-polyglot'
-	
-	" Colorizes Colors 
-	Plug 'chrisbra/Colorizer'
+" Auto close HTML Tags
+Plug 'alvan/vim-closetag'
 
-	" Autogenerates py docstring
-	Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+" Language Pack
+Plug 'sheerun/vim-polyglot'
 
-	" Statusbar at bottom
-	Plug 'vim-airline/vim-airline'
+" Colorizes Colors
+Plug 'chrisbra/Colorizer'
 
-	" Icons
-	Plug 'ryanoasis/vim-devicons'
+" Autogenerates py docstring
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 
-	" Rainbow parantheses
-	Plug 'junegunn/rainbow_parentheses.vim'
+" Statusbar at bottom
+Plug 'vim-airline/vim-airline'
 
-	" Syntax checker
-	Plug 'vim-syntastic/syntastic'	
+" Icons
+Plug 'ryanoasis/vim-devicons'
+
+" Rainbow parantheses
+Plug 'junegunn/rainbow_parentheses.vim'
+
+" Syntax checker
+Plug 'vim-syntastic/syntastic'
+
 call plug#end()
 
 " Deoplete
