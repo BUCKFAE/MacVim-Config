@@ -79,7 +79,11 @@ let g:syntastic_check_on_wq = 0
 autocmd FileType python map <buffer> <C-R> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <C-R> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
-" Markdown preview settings
+" Run Plasma using <STRG + R>
+autocmd FileType qml map <buffer> <C-R> :w<CR>:exec '!qmlscene --resize-to-root' shellescape(@%, 1)<CR>
+autocmd FileType qml imap <buffer> <C-R> <esc> :w<CR>:exec '!qmlscene --resize-to-root' shellescape(@%, 1)<CR>
+
+"Markdown preview settings
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
 let g:mkdp_auto_start = 0
