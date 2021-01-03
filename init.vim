@@ -83,3 +83,6 @@ autocmd FileType python imap <buffer> <C-R> <esc>:w<CR>:exec '!python3' shellesc
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
 let g:mkdp_auto_start = 0
+
+" Enable highlighting of colors
+au VimEnter * ColorHighlight
