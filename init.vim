@@ -28,6 +28,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 " Use <TAB> for autocomplete
 Plug 'ervandew/supertab'
 
+" Markdown preview
+Plug 'JamshedVesuna/vim-markdown-preview'
+
 " Autocomplete Brackets and Qoutes
 Plug 'jiangmiao/auto-pairs'
 
@@ -42,6 +45,9 @@ Plug 'chrisbra/Colorizer'
 
 " Autogenerates py docstring
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+
+" Discord rich presence
+Plug 'hugolgst/vimsence'
 
 " Statusbar at bottom
 Plug 'vim-airline/vim-airline'
@@ -75,6 +81,12 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+"" NOTE
+" In order for pylint to correctly recognize imported modules you need to 
+" 1) run pylint --generate-rcfile > ~/.pylintrc
+" 2) Add the module to extension-pkg-whitelist
+
+
 " Run python scripts using <STRG + R>
 autocmd FileType python map <buffer> <C-R> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <C-R> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
@@ -86,7 +98,7 @@ autocmd FileType qml imap <buffer> <C-R> <esc> :w<CR>:exec '!qmlscene --resize-t
 "Markdown preview settings
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
-let g:mkdp_auto_start = 0
+let g:mkdp_auto_start = 1
 
 " Enable highlighting of colors
 au VimEnter * ColorHighlight
