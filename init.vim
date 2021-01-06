@@ -63,6 +63,10 @@ Plug 'vim-syntastic/syntastic'
 
 call plug#end()
 
+" Setting colorscheme
+colorscheme dracula
+set termguicolors
+
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 
